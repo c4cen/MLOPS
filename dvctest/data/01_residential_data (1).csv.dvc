@@ -1,0 +1,5 @@
+outs:
+- md5: 9f6bcfe103e58d5c20b25e59233d4373
+  size: 24158029
+  hash: md5
+  path: 01_residential_data (1).csv
