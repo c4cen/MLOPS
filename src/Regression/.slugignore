@@ -1,0 +1,7 @@
+*.pkl
+*.csv
+.git/
+.vscode/
+docs/
+tests/
+venv/
