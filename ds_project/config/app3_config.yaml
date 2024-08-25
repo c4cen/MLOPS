@@ -1,0 +1,3 @@
+model:
+  path: "knn_pipeline1.pkl"
+  batch_size: 32

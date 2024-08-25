@@ -1,0 +1,3 @@
+model:
+  path: "model/my_residential_pipeline.pkl"
+  batch_size: 32

@@ -1,0 +1,3 @@
+model:
+  path: "mushroom.pkl"
+  batch_size: 32
