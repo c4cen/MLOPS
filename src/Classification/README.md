@@ -5,6 +5,7 @@ static/: Contains static files like the background image used in the web interfa
 templates/: HTML template used for rendering the web pages.
 
 index.html: The main page where users can input data for single record classification.
+
 Dockerfile: This file contains the instructions to build a Docker image for deployment. It ensures the application can be easily deployed across different environments with consistent behavior.
 
 Mushroom_Classification_220679Y: This is the notebook related to mushroom classification containing code related to creating a model
