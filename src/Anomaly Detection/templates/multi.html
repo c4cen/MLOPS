@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection - Multiple Transactions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Freeman&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Freeman', sans-serif; /* Apply Freeman font to the whole page */
+            background-color: #6a0dad; /* Purple background */
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Set body height to 100% of the viewport height */
+            display: flex;
+            flex-direction: column; /* Ensure flex items are stacked vertically */
+        }
+
+        .navbar {
+            background-color: #4b0082; /* Darker purple for navbar */
+            margin-bottom: 20px; /* Space below the navbar */
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        .form-container {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Full width up to max-width */
+            max-width: 600px; /* Set a maximum width for the form */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
+        .btn-predict {
+            background-color: #4b0082; /* Darker purple for button */
+            color: white;
+            border: none;
+        }
+        .btn-predict:hover {
+            background-color: white;
+            color: #37007a;
+            border: 1px solid #37007a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename= 'logo.png') }}" alt="Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+            Fraud Detection
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Single Transactions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/multiple_transactions">Multiple Transactions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/api_documentation">API Documentation</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Form Container -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="form-container">
+                    <h3 class="text-center">Upload CSV for Prediction</h3>
+                    <form action="/predict_multiple" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="file" class="form-label">Upload CSV File</label>
+                            <input type="file" class="form-control-file" id="file" name="file" accept=".csv">
+                        </div>
+                        <button type="submit" class="btn btn-predict btn-block">Download file with Prediction</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
